@@ -34,6 +34,9 @@ type MothershipConfig struct {
 	TLS               *TLSConfig
 	Worker            int
 	CompressionLevel  *int `yaml:"compression_level"`
+	Url               string `yaml:"url"`
+	ResourceID        string `yaml:"resource_id"`
+	Headers           map[string]string `yaml:"headers"`
 }
 
 type Template struct {

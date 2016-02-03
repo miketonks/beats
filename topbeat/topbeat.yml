@@ -3,11 +3,11 @@
 ############################# Input ############################################
 input:
   # In seconds, defines how often to read server statistics
-  period: 10
+  period: 4
 
   # Regular expression to match the processes that are monitored
   # By default, all the processes are monitored
-  procs: [".*"]
+  #procs: [".*"]
 
   # Statistics to collect (all enabled by default)
   stats:
@@ -15,7 +15,7 @@ input:
     system: true
 
     # per process statistics, by default is true
-    proc: true
+    proc: false
 
     # file system information, by default is true
     filesystem: true
@@ -34,13 +34,20 @@ input:
 # Multiple outputs may be used.
 output:
 
+  cmp:
+    url: "https://example.com/metrics"
+    resource_id: "12345"
+    headers:
+      "X-Header1": "xxxxxxxxxxxx"
+      "X-Header2": "xxxxxxxxxxxx"
+
   ### Elasticsearch as output
-  elasticsearch:
+  #elasticsearch:
     # Array of hosts to connect to.
     # Scheme and port can be left out and will be set to the default (http and 9200)
     # In case you specify and additional path, the scheme is required: http://localhost:9200/path
     # IPv6 addresses should always be defined as: https://[2001:db8::1]:9200
-    hosts: ["localhost:9200"]
+    #hosts: ["localhost:9200"]
 
     # Optional protocol and basic auth credentials.
     #protocol: "https"

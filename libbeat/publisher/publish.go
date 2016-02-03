@@ -14,6 +14,7 @@ import (
 
 	// load supported output plugins
 	_ "github.com/elastic/beats/libbeat/outputs/console"
+	_ "github.com/elastic/beats/libbeat/outputs/cmp"
 	_ "github.com/elastic/beats/libbeat/outputs/elasticsearch"
 	_ "github.com/elastic/beats/libbeat/outputs/fileout"
 	_ "github.com/elastic/beats/libbeat/outputs/logstash"
